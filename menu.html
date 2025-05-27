@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Gourmet Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Gourmet Haven</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>Our Menu</h1>
+            <p>Discover our culinary creations</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section">
+        <div class="menu-categories">
+            <div class="menu-category">
+                <h3>Starters</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>Truffle Arancini</h4>
+                        <p>Crispy risotto balls with black truffle and mozzarella</p>
+                        <span class="price">$16</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Seared Scallops</h4>
+                        <p>With cauliflower puree and crispy pancetta</p>
+                        <span class="price">$24</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Foie Gras Terrine</h4>
+                        <p>With brioche toast and fig compote</p>
+                        <span class="price">$28</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Main Courses</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>Wagyu Ribeye</h4>
+                        <p>300g A5 grade with truffle mashed potatoes</p>
+                        <span class="price">$85</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Lobster Linguine</h4>
+                        <p>Fresh Maine lobster with house-made pasta</p>
+                        <span class="price">$45</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Duck Breast</h4>
+                        <p>With cherry sauce and roasted vegetables</p>
+                        <span class="price">$38</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Desserts</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <h4>Crème Brûlée</h4>
+                        <p>Classic vanilla bean with seasonal berries</p>
+                        <span class="price">$12</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Chocolate Soufflé</h4>
+                        <p>Warm chocolate with vanilla ice cream</p>
+                        <span class="price">$14</span>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Apple Tarte Tatin</h4>
+                        <p>With caramel sauce and crème fraîche</p>
+                        <span class="price">$13</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Menu -->
+    <section class="special-menu">
+        <h2>Chef's Tasting Menu</h2>
+        <div class="tasting-menu">
+            <div class="tasting-item">
+                <img src="images/tasting1.jpg" alt="Tasting Menu Item">
+                <div class="tasting-content">
+                    <h3>7-Course Experience</h3>
+                    <p>A journey through our chef's finest creations</p>
+                    <ul>
+                        <li>Amuse-bouche</li>
+                        <li>Seafood Selection</li>
+                        <li>Foie Gras</li>
+                        <li>Fish Course</li>
+                        <li>Meat Course</li>
+                        <li>Cheese Selection</li>
+                        <li>Dessert</li>
+                    </ul>
+                    <p class="price">$120 per person</p>
+                    <a href="reservations.html" class="cta-button">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gourmet Haven</h3>
+                <p>Experience the art of fine dining</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

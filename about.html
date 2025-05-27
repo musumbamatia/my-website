@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Gourmet Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Gourmet Haven</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p>A journey of culinary excellence</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Welcome to Gourmet Haven</h2>
+                <p>Founded in 2010, Gourmet Haven has been serving exceptional cuisine with a modern twist. Our award-winning chefs combine traditional techniques with innovative approaches to create unforgettable dining experiences.</p>
+                <p>Our commitment to excellence extends beyond the plate. We source the finest ingredients from local farmers and suppliers, ensuring that every dish tells a story of quality and passion.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/restaurant-interior.jpg" alt="Restaurant Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-award"></i>
+                <h3>Award Winning</h3>
+                <p>Recognized for culinary excellence</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-utensils"></i>
+                <h3>Fresh Ingredients</h3>
+                <p>Locally sourced, daily delivery</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-star"></i>
+                <h3>Fine Dining</h3>
+                <p>Elegant atmosphere and service</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/chef1.jpg" alt="Executive Chef">
+                <h3>John Smith</h3>
+                <p>Executive Chef</p>
+            </div>
+            <div class="team-member">
+                <img src="images/chef2.jpg" alt="Sous Chef">
+                <h3>Sarah Johnson</h3>
+                <p>Sous Chef</p>
+            </div>
+            <div class="team-member">
+                <img src="images/chef3.jpg" alt="Pastry Chef">
+                <h3>Michael Chen</h3>
+                <p>Pastry Chef</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gourmet Haven</h3>
+                <p>Experience the art of fine dining</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

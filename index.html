@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Haven | Fine Dining Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Gourmet Haven</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Gourmet Haven</h1>
+            <p>Experience culinary excellence in every bite</p>
+            <div class="hero-buttons">
+                <a href="menu.html" class="cta-button">View Menu</a>
+                <a href="reservations.html" class="cta-button secondary">Make Reservation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Sections -->
+    <section class="featured-sections">
+        <div class="featured-item">
+            <img src="images/featured-menu.jpg" alt="Our Menu">
+            <div class="featured-content">
+                <h2>Our Menu</h2>
+                <p>Discover our exquisite selection of dishes</p>
+                <a href="menu.html" class="cta-button">View Menu</a>
+            </div>
+        </div>
+        <div class="featured-item">
+            <img src="images/featured-about.jpg" alt="Our Story">
+            <div class="featured-content">
+                <h2>Our Story</h2>
+                <p>Learn about our culinary journey</p>
+                <a href="about.html" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <div class="featured-item">
+            <img src="images/featured-gallery.jpg" alt="Photo Gallery">
+            <div class="featured-content">
+                <h2>Gallery</h2>
+                <p>Explore our visual journey</p>
+                <a href="gallery.html" class="cta-button">View Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="offers-section">
+        <div class="offer-card">
+            <h3>Weekend Brunch</h3>
+            <p>Every Saturday & Sunday</p>
+            <p>11:00 AM - 3:00 PM</p>
+            <a href="reservations.html" class="cta-button">Book Now</a>
+        </div>
+        <div class="offer-card">
+            <h3>Chef's Tasting Menu</h3>
+            <p>7-course experience</p>
+            <p>$120 per person</p>
+            <a href="reservations.html" class="cta-button">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gourmet Haven</h3>
+                <p>Experience the art of fine dining</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+

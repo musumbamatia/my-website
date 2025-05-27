@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Gourmet Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Gourmet Haven</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero Section -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>Our Gallery</h1>
+            <p>A visual journey through our culinary world</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="food">Food</button>
+            <button class="filter-btn" data-filter="interior">Interior</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="food">
+                <img src="images/food1.jpg" alt="Signature Dish">
+                <div class="gallery-overlay">
+                    <h3>Signature Dish</h3>
+                    <p>Our chef's special creation</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="interior">
+                <img src="images/interior1.jpg" alt="Restaurant Interior">
+                <div class="gallery-overlay">
+                    <h3>Elegant Dining Room</h3>
+                    <p>Experience luxury dining</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="food">
+                <img src="images/food2.jpg" alt="Dessert Selection">
+                <div class="gallery-overlay">
+                    <h3>Dessert Selection</h3>
+                    <p>Sweet endings to your meal</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/event1.jpg" alt="Private Event">
+                <div class="gallery-overlay">
+                    <h3>Private Events</h3>
+                    <p>Perfect for special occasions</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="interior">
+                <img src="images/interior2.jpg" alt="Bar Area">
+                <div class="gallery-overlay">
+                    <h3>Bar Area</h3>
+                    <p>Craft cocktails and fine wines</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="food">
+                <img src="images/food3.jpg" alt="Chef's Special">
+                <div class="gallery-overlay">
+                    <h3>Chef's Special</h3>
+                    <p>Daily culinary creations</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="events">
+                <img src="images/event2.jpg" alt="Wine Tasting">
+                <div class="gallery-overlay">
+                    <h3>Wine Tasting</h3>
+                    <p>Monthly wine events</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="food">
+                <img src="images/food4.jpg" alt="Fresh Ingredients">
+                <div class="gallery-overlay">
+                    <h3>Fresh Ingredients</h3>
+                    <p>Locally sourced produce</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Gourmet Haven</h3>
+                <p>Experience the art of fine dining</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Gallery filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-content');
+        const lightboxCaption = document.querySelector('.lightbox-caption');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                const title = item.querySelector('h3').textContent;
+                const description = item.querySelector('p').textContent;
+
+                lightboxImg.src = img.src;
+                lightboxCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+                lightbox.style.display = 'flex';
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html> 
