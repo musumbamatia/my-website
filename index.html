@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gourmet Haven | Fine Dining Experience</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#d4af37">
+    <meta name="msapplication-TileColor" content="#d4af37">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -27,7 +50,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up">
             <h1>Welcome to Gourmet Haven</h1>
             <p>Experience culinary excellence in every bite</p>
             <div class="hero-buttons">
@@ -35,11 +58,54 @@
                 <a href="reservations.html" class="cta-button secondary">Make Reservation</a>
             </div>
         </div>
+        <div class="time-widget">
+            <div class="live-clock"></div>
+            <div class="calendar-widget">
+                <div class="calendar-header">
+                    <span class="month"></span>
+                    <span class="year"></span>
+                </div>
+                <div class="calendar-body">
+                    <div class="weekdays"></div>
+                    <div class="days"></div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Featured Sections -->
     <section class="featured-sections">
-        <div class="featured-item">
+        <!-- Image Slider -->
+        <div class="swiper" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-aos="zoom-in">
+                    <img src="images/food1.jpg" alt="Signature Dish">
+                    <div class="slide-content">
+                        <h3>Signature Dish</h3>
+                        <p>Our chef's special creation</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="images/food2.jpg" alt="Fresh Ingredients">
+                    <div class="slide-content">
+                        <h3>Fresh Ingredients</h3>
+                        <p>Locally sourced produce</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="images/food3.jpg" alt="Fine Dining">
+                    <div class="slide-content">
+                        <h3>Fine Dining</h3>
+                        <p>Elegant atmosphere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        <div class="featured-item" data-aos="fade-up" data-aos-delay="100">
             <img src="images/featured-menu.jpg" alt="Our Menu">
             <div class="featured-content">
                 <h2>Our Menu</h2>
@@ -47,7 +113,7 @@
                 <a href="menu.html" class="cta-button">View Menu</a>
             </div>
         </div>
-        <div class="featured-item">
+        <div class="featured-item" data-aos="fade-up" data-aos-delay="200">
             <img src="images/featured-about.jpg" alt="Our Story">
             <div class="featured-content">
                 <h2>Our Story</h2>
@@ -55,7 +121,7 @@
                 <a href="about.html" class="cta-button">Learn More</a>
             </div>
         </div>
-        <div class="featured-item">
+        <div class="featured-item" data-aos="fade-up" data-aos-delay="300">
             <img src="images/featured-gallery.jpg" alt="Photo Gallery">
             <div class="featured-content">
                 <h2>Gallery</h2>
@@ -66,14 +132,20 @@
     </section>
 
     <!-- Special Offers -->
-    <section class="offers-section">
-        <div class="offer-card">
+    <section class="offers-section" data-aos="fade-up">
+        <div class="offer-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="offer-icon" data-aos="flip" data-aos-delay="200">
+                <i class="fas fa-coffee"></i>
+            </div>
             <h3>Weekend Brunch</h3>
             <p>Every Saturday & Sunday</p>
             <p>11:00 AM - 3:00 PM</p>
             <a href="reservations.html" class="cta-button">Book Now</a>
         </div>
-        <div class="offer-card">
+        <div class="offer-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="offer-icon" data-aos="flip" data-aos-delay="300">
+                <i class="fas fa-utensils"></i>
+            </div>
             <h3>Chef's Tasting Menu</h3>
             <p>7-course experience</p>
             <p>$120 per person</p>
@@ -116,6 +188,18 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
 
