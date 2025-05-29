@@ -1,10 +1,62 @@
+// Initialize Swiper with enhanced settings
+const mainSlider = new Swiper('.main-slider', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 1000,
+    grabCursor: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+        },
+        768: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        1024: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        }
+    },
+    on: {
+        init: function() {
+            this.el.addEventListener('mouseenter', () => {
+                this.autoplay.stop();
+            });
+            this.el.addEventListener('mouseleave', () => {
+                this.autoplay.start();
+            });
+        }
+    }
+});
+
 // Initialize AOS with enhanced settings
 AOS.init({
     duration: 1000,
     once: true,
     offset: 100,
     easing: 'ease-in-out',
-    mirror: true
+    delay: 100,
+    mirror: false,
+    anchorPlacement: 'top-bottom'
 });
 
 // Calendar Functionality
@@ -96,48 +148,6 @@ function updateClock() {
 if (document.querySelector('.live-clock')) {
     setInterval(updateClock, 1000);
     updateClock();
-}
-
-// Enhanced Image Slider (Swiper)
-if (document.querySelector('.swiper')) {
-    const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        effect: 'coverflow',
-        coverflowEffect: {
-            rotate: 30,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1,
-                spaceBetween: 10
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 20
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            }
-        }
-    });
 }
 
 // Smooth scrolling for navigation links
@@ -289,4 +299,85 @@ if (mobileMenu && navLinks) {
             mobileMenu.classList.remove('active');
         });
     });
-} 
+}
+
+// Gallery Slideshow
+document.addEventListener('DOMContentLoaded', function() {
+    const slideshow = document.querySelector('.gallery-slideshow-container');
+    const slides = document.querySelectorAll('.gallery-slide');
+    const prevBtn = document.querySelector('.gallery-control-btn.prev');
+    const nextBtn = document.querySelector('.gallery-control-btn.next');
+    const dots = document.querySelectorAll('.gallery-dot');
+    
+    let currentSlide = 0;
+    const slideCount = slides.length;
+    
+    // Function to update slideshow position
+    function updateSlideshow() {
+        slideshow.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slideCount;
+        updateSlideshow();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+        updateSlideshow();
+    }
+    
+    // Event listeners for controls
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateSlideshow();
+        });
+    });
+    
+    // Auto-advance slideshow
+    let slideshowInterval = setInterval(nextSlide, 5000);
+    
+    // Pause auto-advance on hover
+    const slideshowContainer = document.querySelector('.gallery-slideshow');
+    slideshowContainer.addEventListener('mouseenter', () => {
+        clearInterval(slideshowInterval);
+    });
+    
+    slideshowContainer.addEventListener('mouseleave', () => {
+        slideshowInterval = setInterval(nextSlide, 5000);
+    });
+    
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    slideshowContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    slideshowContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            nextSlide();
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            prevSlide();
+        }
+    }
+}); 

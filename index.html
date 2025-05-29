@@ -53,6 +53,31 @@
         <div class="hero-content" data-aos="fade-up">
             <h1>Welcome to Gourmet Haven</h1>
             <p>Experience culinary excellence in every bite</p>
+            <div class="contact-numbers" data-aos="fade-up" data-aos-delay="50">
+                <p><i class="fas fa-phone"></i> +256 763 799 005</p>
+                <p><i class="fas fa-phone"></i> +256 755 403 794</p>
+                <p><i class="fas fa-envelope"></i> musumbamatia23@gmail.com</p>
+            </div>
+            <div class="hero-features">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/award.jpg" alt="Signature Dishes" class="feature-img" style="width:70px;height:70px;object-fit:cover;border-radius:50%;margin-bottom:1rem;">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Signature Dishes</h3>
+                    <p>Our chef's special creations</p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/ingredients.jpg" alt="Fresh Ingredients" class="feature-img" style="width:70px;height:70px;object-fit:cover;border-radius:50%;margin-bottom:1rem;">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Locally sourced produce</p>
+                </div>
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/dining.jpg" alt="Fine Dining" class="feature-img" style="width:70px;height:70px;object-fit:cover;border-radius:50%;margin-bottom:1rem;">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Fine Dining</h3>
+                    <p>Elegant atmosphere</p>
+                </div>
+            </div>
             <div class="hero-buttons">
                 <a href="menu.html" class="cta-button">View Menu</a>
                 <a href="reservations.html" class="cta-button secondary">Make Reservation</a>
@@ -71,63 +96,45 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Featured Sections -->
-    <section class="featured-sections">
         <!-- Image Slider -->
-        <div class="swiper" data-aos="fade-up">
+        <div class="swiper main-slider" data-aos="fade-up">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" data-aos="zoom-in">
+                <div class="swiper-slide">
                     <img src="images/food1.jpg" alt="Signature Dish">
                     <div class="slide-content">
                         <h3>Signature Dish</h3>
                         <p>Our chef's special creation</p>
+                        <a href="menu.html" class="cta-button">Order Now</a>
                     </div>
                 </div>
-                <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="100">
+                <div class="swiper-slide">
                     <img src="images/food2.jpg" alt="Fresh Ingredients">
                     <div class="slide-content">
                         <h3>Fresh Ingredients</h3>
                         <p>Locally sourced produce</p>
+                        <a href="about.html" class="cta-button">Learn More</a>
                     </div>
                 </div>
-                <div class="swiper-slide" data-aos="zoom-in" data-aos-delay="200">
+                <div class="swiper-slide">
                     <img src="images/food3.jpg" alt="Fine Dining">
                     <div class="slide-content">
                         <h3>Fine Dining</h3>
                         <p>Elegant atmosphere</p>
+                        <a href="reservations.html" class="cta-button">Book Table</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/food4.jpg" alt="Special Events">
+                    <div class="slide-content">
+                        <h3>Special Events</h3>
+                        <p>Perfect for celebrations</p>
+                        <a href="contact.html" class="cta-button">Contact Us</a>
                     </div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-        </div>
-
-        <div class="featured-item" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/featured-menu.jpg" alt="Our Menu">
-            <div class="featured-content">
-                <h2>Our Menu</h2>
-                <p>Discover our exquisite selection of dishes</p>
-                <a href="menu.html" class="cta-button">View Menu</a>
-            </div>
-        </div>
-        <div class="featured-item" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/featured-about.jpg" alt="Our Story">
-            <div class="featured-content">
-                <h2>Our Story</h2>
-                <p>Learn about our culinary journey</p>
-                <a href="about.html" class="cta-button">Learn More</a>
-            </div>
-        </div>
-        <div class="featured-item" data-aos="fade-up" data-aos-delay="300">
-            <img src="images/featured-gallery.jpg" alt="Photo Gallery">
-            <div class="featured-content">
-                <h2>Gallery</h2>
-                <p>Explore our visual journey</p>
-                <a href="gallery.html" class="cta-button">View Gallery</a>
-            </div>
         </div>
     </section>
 
@@ -150,6 +157,60 @@
             <p>7-course experience</p>
             <p>$120 per person</p>
             <a href="reservations.html" class="cta-button">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <h2>Our Gallery</h2>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="food">Food</button>
+            <button class="filter-btn" data-filter="interior">Interior</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+
+        <!-- Enhanced Gallery Slideshow -->
+        <div class="gallery-slideshow">
+            <div class="gallery-slideshow-container">
+                <div class="gallery-slide">
+                    <img src="images/food1.jpg" alt="Signature Dish">
+                    <div class="gallery-slide-content">
+                        <h3>Signature Dish</h3>
+                        <p>Experience our chef's special creation</p>
+                        <a href="menu.html" class="cta-button">View Menu</a>
+                    </div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="images/interior1.jpg" alt="Restaurant Interior">
+                    <div class="gallery-slide-content">
+                        <h3>Elegant Interior</h3>
+                        <p>Dine in our sophisticated atmosphere</p>
+                        <a href="reservations.html" class="cta-button">Book a Table</a>
+                    </div>
+                </div>
+                <div class="gallery-slide">
+                    <img src="images/event1.jpg" alt="Special Events">
+                    <div class="gallery-slide-content">
+                        <h3>Special Events</h3>
+                        <p>Perfect venue for your celebrations</p>
+                        <a href="contact.html" class="cta-button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-control-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="gallery-control-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="gallery-dots">
+                <span class="gallery-dot active"></span>
+                <span class="gallery-dot"></span>
+                <span class="gallery-dot"></span>
+            </div>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Gallery items will be dynamically loaded here -->
         </div>
     </section>
 
