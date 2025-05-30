@@ -132,7 +132,7 @@ if (localStorage.getItem('darkMode') === 'true') {
     darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
 }
 
-// Live Clock with enhanced formatting
+// Live Clock with enhanced formatting and features
 function updateClock() {
     const now = new Date();
     const clockElement = document.querySelector('.live-clock');
@@ -140,14 +140,32 @@ function updateClock() {
         const hours = now.getHours().toString().padStart(2, '0');
         const minutes = now.getMinutes().toString().padStart(2, '0');
         const seconds = now.getSeconds().toString().padStart(2, '0');
-        clockElement.innerHTML = `${hours}:${minutes}:${seconds}`;
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const formattedHours = hours % 12 || 12;
+        
+        // Add a subtle animation to the seconds
+        const secondsElement = `<span class="seconds">${seconds}</span>`;
+        
+        // Format the time with AM/PM
+        clockElement.innerHTML = `${formattedHours}:${minutes}${secondsElement} ${ampm}`;
+        
+        // Add a subtle pulse animation to the seconds
+        const secondsSpan = clockElement.querySelector('.seconds');
+        if (secondsSpan) {
+            secondsSpan.style.opacity = '0.7';
+            setTimeout(() => {
+                secondsSpan.style.opacity = '1';
+            }, 100);
+        }
     }
 }
 
 // Initialize clock if element exists
 if (document.querySelector('.live-clock')) {
-    setInterval(updateClock, 1000);
+    // Update immediately
     updateClock();
+    // Then update every second
+    setInterval(updateClock, 1000);
 }
 
 // Smooth scrolling for navigation links
